@@ -17,7 +17,6 @@ const Home = () => {
     "ENFJ",
     "writer",
     "gamer",
-    "producitivity chaser",
   ]);
   const [index, setIndex] = useState(Math.floor(Math.random() * list.length));
 
@@ -48,13 +47,13 @@ const Home = () => {
           I am a{" "}
           <span className="font-bold font-mono italic">{list[index]}</span>
         </span>
-        <div className="flex items-center space-x-2 text-lg mt-3">
+        <div className="flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-2 text-sm md:text-lg mt-3">
           <a>mark.fang.mo@gmail.com</a>
           <h1 className="font-bold">·</h1>
           <a
             className="underline"
             href="github.com/weirdguppy1"
-            target="_blank"
+            target="_blank" 
           >
             Github
           </a>

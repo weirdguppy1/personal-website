@@ -1,8 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { WHO_AM_I } from "../content/content";
-import Navbar from "./Navbar";
-import Image from "../media/IMG_1945.jpg";
 
 const About = () => {
   return (

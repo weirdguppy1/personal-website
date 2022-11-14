@@ -1,7 +1,7 @@
 import React from "react";
 
 export const WHO_AM_I = `Hi! I'm Mark Fang. I'm a high schooler who enjoys 
-  coding, napping, writing, or shooting some hoops in the driveway. St.Louis is my city.
+  coding, napping, writing, or shooting some hoops in the driveway. I live in St. Louis and currently attend John Burroughs School. 
 `;
 
 export const PROJECTS_INTRO = `
