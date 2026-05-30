@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafafa;
+  --foreground: #1f1f1f;
+  --muted: #6b6b6b;
+  --muted-2: #9a9a9a;
+  --rule: #e5e5e5;
+  --surface: #f1f1f1;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-2: var(--muted-2);
+  --color-rule: var(--rule);
+  --color-surface: var(--surface);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-instrument-serif);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0e0e0e;
     --foreground: #ededed;
+    --muted: #9a9a9a;
+    --muted-2: #6b6b6b;
+    --rule: #262626;
+    --surface: #161616;
   }
+}
+
+@keyframes rainbow-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.rainbow-text:hover {
+  @apply text-transparent bg-clip-text;
+  background-image: linear-gradient(
+    90deg,
+    #ff0080,
+    #ffcc00,
+    #00f0ff,
+    #7c3aed,
+    #ff0080
+  );
+  background-size: 300% 100%;
+  animation: rainbow-flow 2.5s linear infinite;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: var(--font-sans), Arial, Helvetica, sans-serif; */
 }
