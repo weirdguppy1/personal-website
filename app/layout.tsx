@@ -20,8 +20,8 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Yue Fang — Developer",
-  description: "Portfolio of Yue Fang, software developer.",
+  title: "mark f.",
+  description: "Portfolio of Mark Fang, software developer.",
 };
 
 export default function RootLayout({
