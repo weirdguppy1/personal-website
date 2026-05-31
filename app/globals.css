@@ -55,8 +55,11 @@
   animation: rainbow-flow 2.5s linear infinite;
 }
 
+strong {
+  @apply font-bold text-foreground;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  /* font-family: var(--font-sans), Arial, Helvetica, sans-serif; */
 }
