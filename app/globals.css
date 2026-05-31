@@ -55,6 +55,10 @@
   animation: rainbow-flow 2.5s linear infinite;
 }
 
+.link {
+  @apply underline decoration-blue-500 text-blue-500 underline-offset-4 cursor-pointer;
+}
+
 strong {
   @apply font-bold text-foreground;
 }
