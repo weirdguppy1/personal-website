@@ -1,13 +1,13 @@
+import NowPlaying from "@/components/NowPlaying";
+import Link from "next/link";
+
 const projects: any[] = [
   {
-    name: "Halftone",
-    year: "2024",
+    name: "RocademySTL",
     description:
-      "An image-to-ASCII renderer with a focus on typographic detail and tasteful dithering.",
-    stack: ["Rust", "WASM"],
-    href: "#",
+      "founded a profitable game development camp in the St. Louis area.",
+    href: "/projects/rocademy",
   },
-  
 ];
 
 const links = [
@@ -26,16 +26,16 @@ export default function Home() {
         <h1 className="mt-6 font-serif text-5xl sm:text-6xl leading-[1.05] tracking-tight text-foreground">
           Mark <span className="italic text-muted">Fang</span>
         </h1>
-
-        <p className="mt-3 font-mono text-xs tracking-tight text-foreground">
+        <p className="mt-3 font-mono text-xs tracking-tight text-muted">
           i {"<3"} building & philosophy.
         </p>
 
         <div className="mt-5 h-px w-12 bg-rule" />
 
-        <p className="mt-5 text-[12px] leading-relaxed text-muted max-w-md font-mono">
+        {/* paragraph */}
+        <p className="mt-5 text-[12px] leading-relaxed text-foreground max-w-md font-mono">
           hello, name's mark. i attend{" "}
-          <span className="underline decoration-[#00205B] underline-offset-4">
+          <span className="underline decoration-[#00205B] underline-offset-4 rainbow-text">
             rice university
           </span>{" "}
           studying cs & business. into tech of all sorts, especially startups
@@ -44,18 +44,15 @@ export default function Home() {
 
         <section className="mt-20 w-full text-left">
           <header className="flex items-baseline justify-between">
-            <h2 className="font-mono text-md text-foreground">projects</h2>
+            <h2 className="font-mono text-md text-foreground font-bold">projects</h2>
           </header>
 
           <ul className="mt-2 divide-y divide-rule">
-            {projects.map((project, index) => (
-              <li
-                key={project.name}
-                className={""}
-              >
-                <a
+            {projects.map((project) => (
+              <li key={project.name}>
+                <Link
                   href={project.href}
-                  className="flex items-baseline justify-between gap-8 py-3.5 font-mono transition-opacity hover:opacity-50"
+                  className="flex items-baseline justify-between gap-8 py-3.5 font-mono transition-opacity hover:opacity-5"
                 >
                   <span className="text-[13px] text-foreground whitespace-nowrap">
                     {project.name}
@@ -68,6 +65,24 @@ export default function Home() {
                   <span className="text-[12px] text-muted-2 whitespace-nowrap">
                     →
                   </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="mt-20 w-full text-left">
+          <h2 className="font-mono text-md text-foreground font-bold">elsewhere</h2>
+          <ul className="mt-5 flex-col">
+            {links.map((link) => (
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  className="text-sm font-mono underline text-muted-2 rainbow-text"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>{link.label}</span>
                 </a>
               </li>
             ))}
@@ -75,21 +90,8 @@ export default function Home() {
         </section>
 
         <section className="mt-20 w-full text-left">
-          <h2 className="font-mono text-md text-foreground">elsewhere</h2>
-          <ul className="mt-5 flex-col">
-            {links.map((link) => (
-              <li key={link.label}>
-                <a
-                
-                  href={link.href}
-                  className="text-sm font-mono underline text-muted-2 rainbow-text"
-                  target="_blank" rel="noopener noreferrer"
-                >
-                  <span>{link.label}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
+          <h2 className="font-mono text-md text-foreground mb-5">currently</h2>
+          <NowPlaying />
         </section>
 
         <footer className="mt-24 font-mono text-[10.5px] text-muted-2">
