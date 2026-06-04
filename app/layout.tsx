@@ -21,7 +21,7 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   title: "mark f.",
-  description: "Portfolio of Mark Fang, software developer.",
+  description: "portfolio of mark fang, software developer & creative.",
 };
 
 export default function RootLayout({
