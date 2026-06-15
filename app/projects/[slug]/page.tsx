@@ -102,7 +102,7 @@ export default async function ProjectPage({
         )}
 
         <header className="mt-10 sm:mt-14">
-          <h1 className="font-serif text-4xl sm:text-5xl leading-[1.05] tracking-tight text-foreground">
+          <h1 className="font-mono text-4xl sm:text-5xl leading-[1.05] tracking-tight text-foreground">
             {meta.title}
             {meta.accent && (
               <span className="italic text-muted">{meta.accent}</span>

@@ -16,9 +16,9 @@
   --color-muted-2: var(--muted-2);
   --color-rule: var(--rule);
   --color-surface: var(--surface);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-serif: var(--font-instrument-serif);
+  --font-sans: var(--font-dot-gothic);
+  --font-mono: var(--font-dot-gothic);
+  --font-serif: var(--font-doto);
 }
 
 @media (prefers-color-scheme: dark) {

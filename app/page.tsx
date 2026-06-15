@@ -23,8 +23,8 @@ export default function Home() {
   return (
     <main className="flex-1 flex justify-center px-6 py-20 sm:py-28">
       <div className="w-full max-w-xl flex flex-col items-center text-center">
-        <h1 className="mt-6 font-serif text-5xl sm:text-6xl leading-[1.05] tracking-tight text-foreground">
-          Mark <span className="italic text-muted">Fang</span>
+        <h1 className="mt-6 font-mono text-5xl sm:text-6xl leading-[1.05] tracking-tight text-foreground">
+          Mark Fang
         </h1>
         <p className="mt-3 font-mono text-xs tracking-tight text-muted">
           i {"<3"} building & philosophy.

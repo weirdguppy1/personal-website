@@ -2,7 +2,7 @@ import type { MDXComponents } from "mdx/types";
 
 const components: MDXComponents = {
   h1: ({ children }) => (
-    <h1 className="font-serif text-3xl tracking-tight text-foreground mt-10 mb-3">
+    <h1 className="font-mono text-3xl tracking-tight text-foreground mt-10 mb-3">
       {children}
     </h1>
   ),
