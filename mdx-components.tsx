@@ -2,22 +2,22 @@ import type { MDXComponents } from "mdx/types";
 
 const components: MDXComponents = {
   h1: ({ children }) => (
-    <h1 className="font-mono text-3xl tracking-tight text-foreground mt-10 mb-3">
+    <h1 className="font-sans font-bold text-2xl tracking-tight text-foreground mt-8 mb-3">
       {children}
     </h1>
   ),
   h2: ({ children }) => (
-    <h2 className="font-mono text-xs uppercase tracking-[0.18em] text-foreground mt-10 mb-3">
+    <h2 className="font-sans text-sm font-bold uppercase tracking-[0.14em] text-foreground mt-8 mb-3">
       {children}
     </h2>
   ),
   h3: ({ children }) => (
-    <h3 className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted mt-6 mb-2">
+    <h3 className="font-sans text-xs uppercase tracking-[0.14em] text-muted mt-6 mb-2">
       {children}
     </h3>
   ),
   p: ({ children }) => (
-    <p className="font-mono text-[12px] leading-relaxed text-muted my-3">
+    <p className="font-sans text-[15px] leading-relaxed text-muted my-3">
       {children}
     </p>
   ),
@@ -32,12 +32,12 @@ const components: MDXComponents = {
     </a>
   ),
   ul: ({ children }) => (
-    <ul className="font-mono text-[12px] leading-relaxed text-muted my-3 list-none pl-0 space-y-1.5">
+    <ul className="font-sans text-[15px] leading-relaxed text-muted my-3 list-none pl-0 space-y-1.5">
       {children}
     </ul>
   ),
   ol: ({ children }) => (
-    <ol className="font-mono text-[12px] leading-relaxed text-muted my-3 list-decimal pl-5 space-y-1.5">
+    <ol className="font-sans text-[15px] leading-relaxed text-muted my-3 list-decimal pl-5 space-y-1.5">
       {children}
     </ol>
   ),
@@ -47,12 +47,12 @@ const components: MDXComponents = {
     </li>
   ),
   code: ({ children }) => (
-    <code className="font-mono text-[11px] bg-surface text-foreground px-1.5 py-0.5 rounded-sm">
+    <code className="font-mono text-[13px] bg-surface text-foreground px-1.5 py-0.5 rounded-sm">
       {children}
     </code>
   ),
   blockquote: ({ children }) => (
-    <blockquote className="font-serif italic text-foreground text-base border-l border-rule pl-4 my-6">
+    <blockquote className="font-serif italic text-foreground text-lg border-l border-rule pl-4 my-6">
       {children}
     </blockquote>
   ),

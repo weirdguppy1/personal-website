@@ -16,8 +16,8 @@
   --color-muted-2: var(--muted-2);
   --color-rule: var(--rule);
   --color-surface: var(--surface);
-  --font-sans: var(--font-dot-gothic);
-  --font-mono: var(--font-dot-gothic);
+  --font-sans: var(--font-satoshi);
+  --font-mono: var(--font-satoshi);
   --font-serif: var(--font-doto);
 }
 
@@ -53,6 +53,75 @@
   );
   background-size: 300% 100%;
   animation: rainbow-flow 2.5s linear infinite;
+}
+
+.font-windsor {
+  font-family: var(--font-windsor), Georgia, serif;
+  font-weight: 700;
+}
+
+.modal {
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule) transparent;
+}
+
+/* --- motion (subtle) --- */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* staggered entrance for top-level blocks; ponytail: nth-child stagger, capped at 8 siblings */
+.reveal {
+  animation: fade-up 0.6s ease-out both;
+}
+.reveal:nth-child(2) { animation-delay: 60ms; }
+.reveal:nth-child(3) { animation-delay: 120ms; }
+.reveal:nth-child(4) { animation-delay: 180ms; }
+.reveal:nth-child(5) { animation-delay: 240ms; }
+.reveal:nth-child(6) { animation-delay: 300ms; }
+.reveal:nth-child(7) { animation-delay: 360ms; }
+.reveal:nth-child(8) { animation-delay: 420ms; }
+
+.card {
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--muted-2);
+}
+
+.modal[open] {
+  animation: fade-up 0.25s ease-out;
+}
+.modal[open]::backdrop {
+  animation: fade-in 0.25s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .modal[open],
+  .modal[open]::backdrop {
+    animation: none;
+  }
+  .card {
+    transition: none;
+  }
 }
 
 .link {

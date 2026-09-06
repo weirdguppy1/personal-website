@@ -79,7 +79,7 @@ export default function NowPlaying() {
   if (error || !track?.isPlaying) {
     return (
       <div className="flex items-center gap-2 w-full font-mono">
-        <p className="text-[11px] text-muted-2 flex space-x-2">
+        <p className="text-sm text-muted-2 flex items-center space-x-2">
           <SpotifyIcon className="w-5 h-5 text-green-500" />
           <span>not listening to anything right now</span>
         </p>
@@ -98,21 +98,21 @@ export default function NowPlaying() {
         <img
           src={track.albumArt}
           alt={track.album}
-          className="w-9 h-9 rounded object-cover shrink-0"
+          className="w-11 h-11 rounded object-cover shrink-0"
         />
       ) : (
-        <div className="w-9 h-9 rounded bg-surface shrink-0" />
+        <div className="w-11 h-11 rounded bg-surface shrink-0" />
       )}
 
       <div className="flex flex-col min-w-0 flex-1 gap-0.5">
         <div className="flex items-center gap-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-foreground animate-pulse shrink-0" />
-          <span className="text-[10px] text-muted-2 tracking-widest">
+          <span className="text-xs text-muted-2 tracking-widest">
             mark is listening to{" "}
             <span className="text-green-500 uppercase">spotify</span> right now.
           </span>
         </div>
-        <p className="text-[12px] text-foreground truncate leading-tight">
+        <p className="text-sm text-foreground truncate leading-tight">
           {track.title}
           <span className="text-muted"> — {track.artist}</span>
         </p>

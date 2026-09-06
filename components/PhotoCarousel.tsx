@@ -22,7 +22,7 @@ export default function PhotoCarousel({ photos }: { photos: Photo[] }) {
   return (
     <div className="space-y-2">
       <div
-        className="w-full overflow-hidden bg-surface border border-rule relative"
+        className="w-full overflow-hidden bg-surface border border-rule rounded-lg relative"
         style={{ aspectRatio: photo.ratio ?? "4 / 3" }}
       >
         {photo.src ? (
@@ -32,15 +32,16 @@ export default function PhotoCarousel({ photos }: { photos: Photo[] }) {
             alt={photo.alt ?? photo.caption ?? ""}
             className="h-full w-full object-cover"
             fill
+            sizes="(min-width: 640px) 576px, 100vw"
           />
         ) : (
-          <div className="h-full w-full flex items-center justify-center font-mono text-[10px] text-muted-2">
+          <div className="h-full w-full flex items-center justify-center font-sans text-xs text-muted-2">
             ◌
           </div>
         )}
       </div>
 
-      <div className="flex items-center justify-between font-mono text-[10.5px] text-muted-2">
+      <div className="flex items-center justify-between font-sans text-xs text-muted-2">
         <span className="truncate pr-3">{photo.caption}</span>
         {total > 1 && (
           <div className="flex items-center gap-3 shrink-0">
