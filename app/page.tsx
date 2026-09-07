@@ -46,22 +46,21 @@ export default async function Home() {
   return (
     <main className="flex-1 flex justify-center px-6 py-20 sm:py-28">
       <div className="w-full max-w-xl flex flex-col items-center text-center">
-        <h1 className="reveal mt-6 font-windsor text-6xl sm:text-7xl leading-[1.05] tracking-tight text-foreground">
-          sup, i'm mark.
+        <h1 className="reveal mt-6 font-windsor text-5xl sm:text-6xl leading-[1.05] tracking-tight text-foreground">
+          hi, i'm mark.
         </h1>
         <p className="reveal mt-3 font-sans text-sm text-muted">
-          i {"<3"} building & philosophy.
+          cs & philosophy @
+          <span className="underline decoration-[#0000FF] underline-offset-4 rainbow-text">
+            rice university
+          </span>
+          .{" "}
         </p>
 
         <div className="reveal mt-5 h-px w-12 bg-rule" />
 
-        <p className="reveal mt-5 text-[15px] leading-relaxed text-foreground max-w-md font-sans">
-          i attend{" "}
-          <span className="underline decoration-[#00205B] underline-offset-4 rainbow-text">
-            rice university
-          </span>{" "}
-          studying cs & business. into tech of all sorts, especially startups
-          and roblox game development.
+        <p className="reveal mt-5 text-md leading-relaxed text-foreground max-w-sm font-sans">
+          interested in consumer apps, roblox dev, and philosophy.
         </p>
 
         <section className="reveal mt-20 w-full text-left">
@@ -116,7 +115,7 @@ export default async function Home() {
           <h2 className="font-windsor text-xl text-foreground mb-5">
             in the past
           </h2>
-          <ul className="list-disc list-inside space-y-4">
+          <ul className="list-disc list-outside pl-5 space-y-4">
             <li>made my first $5k in 9th grade building Roblox games.</li>
             <li>started an education company doing $10k+ in revenue.</li>
             <li>
