@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Doto } from "next/font/google";
 import localFont from "next/font/local";
+import CustomCursor from "@/components/CustomCursor";
 import "./globals.css";
 
 const satoshi = localFont({
@@ -39,7 +40,10 @@ export default function RootLayout({
       lang="en"
       className={`${satoshi.variable} ${windsor.variable} ${doto.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <CustomCursor />
+      </body>
     </html>
   );
 }

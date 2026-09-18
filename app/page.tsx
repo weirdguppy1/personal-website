@@ -10,6 +10,7 @@ type ProjectMeta = {
   tagline?: string;
   year?: string;
   demo?: string;
+  thumb?: string;
   photos?: { src?: string; caption?: string; ratio?: string; alt?: string }[];
 };
 
@@ -50,10 +51,15 @@ export default async function Home() {
           hi, i'm mark.
         </h1>
         <p className="reveal mt-3 font-sans text-sm text-muted">
-          cs & philosophy @
-          <span className="underline decoration-[#0000FF] underline-offset-4 rainbow-text">
+          cs & philosophy @{" "}
+          <a
+            href="https://www.rice.edu"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4 decoration-rule hover:text-foreground transition-colors"
+          >
             rice university
-          </span>
+          </a>
           .{" "}
         </p>
 
@@ -81,6 +87,7 @@ export default async function Home() {
                 tagline={meta.tagline}
                 year={meta.year}
                 demo={meta.demo}
+                thumb={meta.thumb ?? meta.photos?.[0]?.src}
               >
                 <Content />
                 {meta.photos?.length ? (
@@ -100,7 +107,7 @@ export default async function Home() {
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className="text-[15px] font-sans underline underline-offset-4 text-muted-2 rainbow-text hover:text-foreground transition-colors"
+                  className="text-[15px] font-sans underline underline-offset-4 text-muted-2 hover:text-foreground transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

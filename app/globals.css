@@ -7,6 +7,18 @@
   --muted-2: #9a9a9a;
   --rule: #e5e5e5;
   --surface: #f1f1f1;
+
+  /* kind pills */
+  --venture-bg: #f7f1ea;
+  --venture-fg: #a67c52;
+  --venture-rule: #eadfd2;
+  --project-bg: #edf1f5;
+  --project-fg: #6b8199;
+  --project-rule: #dbe2ea;
+
+  /* custom cursor: the white fill, and the ink drawn on top of it */
+  --cursor-fill: #ffffff;
+  --cursor-ink: #0e0e0e;
 }
 
 @theme inline {
@@ -29,35 +41,40 @@
     --muted-2: #6b6b6b;
     --rule: #262626;
     --surface: #161616;
-  }
-}
 
-@keyframes rainbow-flow {
-  0% {
-    background-position: 0% 50%;
+    --venture-bg: #221c16;
+    --venture-fg: #c2a181;
+    --venture-rule: #3a2f24;
+    --project-bg: #171b20;
+    --project-fg: #93a7ba;
+    --project-rule: #2b333c;
   }
-  100% {
-    background-position: 200% 50%;
-  }
-}
-
-.rainbow-text:hover {
-  @apply text-transparent bg-clip-text;
-  background-image: linear-gradient(
-    90deg,
-    #ff0080,
-    #ffcc00,
-    #00f0ff,
-    #7c3aed,
-    #ff0080
-  );
-  background-size: 300% 100%;
-  animation: rainbow-flow 2.5s linear infinite;
 }
 
 .font-windsor {
   font-family: var(--font-windsor), Georgia, serif;
   font-weight: 700;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.6875rem;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+}
+.pill-venture {
+  background: var(--venture-bg);
+  color: var(--venture-fg);
+  border-color: var(--venture-rule);
+}
+.pill-project {
+  background: var(--project-bg);
+  color: var(--project-fg);
+  border-color: var(--project-rule);
 }
 
 .modal {
@@ -135,4 +152,87 @@ strong {
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+/* --- custom cursor --- */
+.cursor-layer {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 2147483647;
+  transition: opacity 0.2s ease;
+}
+.cursor-layer:popover-open {
+  display: block;
+}
+
+.cursor-dot,
+.cursor-shell {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.cursor-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: var(--cursor-fill);
+  /* keeps the white dot readable on the light theme too */
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 0.22), 0 2px 8px rgb(0 0 0 / 0.18);
+  transition: opacity 0.15s ease;
+}
+
+.cursor-shell {
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.2s ease;
+}
+
+/* the white wave, and the copy of the content it carries, share a clip circle */
+.cursor-fill,
+.cursor-clone {
+  position: absolute;
+  inset: 0;
+  clip-path: circle(0px at 50% 50%);
+}
+.cursor-fill {
+  background: var(--cursor-fill);
+}
+
+/* the cloned markup keeps its own layout, but drops its background and
+   flips to dark ink so it stays legible on the white fill */
+.cursor-clone-node {
+  /* display/margin are left alone: the copy has to lay out exactly like the
+     original, so only motion and paint are overridden */
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-color: transparent !important;
+  color: var(--cursor-ink) !important;
+}
+.cursor-clone-node * {
+  background-color: transparent !important;
+  animation: none !important;
+  transition: none !important;
+  color: var(--cursor-ink) !important;
+  -webkit-text-fill-color: var(--cursor-ink) !important;
+  border-color: rgb(0 0 0 / 0.18) !important;
+  text-decoration-color: rgb(0 0 0 / 0.35) !important;
+}
+
+/* hide the native cursor only once the custom one is actually running */
+.has-custom-cursor,
+.has-custom-cursor * {
+  cursor: none !important;
 }
