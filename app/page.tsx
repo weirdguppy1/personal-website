@@ -14,7 +14,7 @@ type ProjectMeta = {
   photos?: { src?: string; caption?: string; ratio?: string; alt?: string }[];
 };
 
-async function loadProjects() {
+async function loadProjecpts() {
   const dir = path.join(process.cwd(), "content", "projects");
   const slugs = fs
     .readdirSync(dir)
