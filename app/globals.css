@@ -172,6 +172,10 @@ body {
 .cursor-layer:popover-open {
   display: block;
 }
+/* touch devices never start the cursor, so its markup stays out of sight */
+html:not(.has-custom-cursor) .cursor-layer {
+  display: none;
+}
 
 .cursor-dot,
 .cursor-shell {
